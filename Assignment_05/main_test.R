@@ -1,0 +1,27 @@
+source("sma.R")
+source("ema.R")
+source("macd.R")
+source("stdev.R")
+source("linreg.R")
+source("rsi.R")
+source("stoch_rsi.R")
+source("crossover.R")
+source("crossunder.R")
+
+sample_data <- c(10, 12, 15, 20, 18, 22, 25, 24, 21)
+print(sma(sample_data, period = 3))
+print(ema(sample_data, period = 3))
+print(stdev(sample_data))
+print(linreg(sample_data, regressionLength = 5, regressionOffset = 1))
+
+rsi_data <- c(45, 50, 48, 55, 52, 49, 58, 60, 65, 62, 64, 67, 63, 68, 70, 72)
+print(rsi(rsi_data, period = 5))
+print(stoch_rsi(rsi_data, period = 5, k_period = 3, d_period = 3))
+
+macd_data <- c(100, 105, 110, 115, 120, 125, 130)
+print(macd(macd_data, short_period = 3, long_period = 5, signal_period = 2))
+
+arr1 <- c(10, 12, 15, 20, 18, 22, 25, 24, 21)
+arr2 <- c(18, 20, 22, 18, 15, 12, 10, 11, 13)
+print(crossover(arr1, arr2))
+print(crossunder(arr1, arr2))
